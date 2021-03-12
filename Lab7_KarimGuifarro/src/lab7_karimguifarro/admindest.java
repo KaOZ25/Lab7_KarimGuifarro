@@ -1,59 +1,47 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package lab7_karimguifarro;
 
+package lab7_karimguifarro;
 import java.io.*;
 import java.util.ArrayList;
-
-public class adminastro {
-
-    private ArrayList<astronuta> listaastro = new ArrayList();
+public class admindest {
+     private ArrayList<destino> listadest = new ArrayList();
     private File arch = null;
 
-    public adminastro(String path) {
-        arch = new File(path);
+    public admindest(String path) {
+        arch=new File (path);
     }
 
-    public ArrayList<astronuta> getListaPersonas() {
-        return listaastro;
+    public ArrayList<destino> getListadest() {
+        return listadest;
     }
 
-    public void setListaastronauta(ArrayList<astronuta> listaPersonas) {
-        this.listaastro = listaPersonas;
+    public void setListadest(ArrayList<destino> listadest) {
+        this.listadest = listadest;
     }
 
-    public File getArchivo() {
+    public File getArch() {
         return arch;
     }
 
-    public void setArchivo(File arch) {
+    public void setArch(File arch) {
         this.arch = arch;
     }
 
     @Override
     public String toString() {
-        return "adminastro{" + "listaastro=" + listaastro + ", arch=" + arch + '}';
+        return "admindest{" + "listadest=" + listadest + ", arch=" + arch + '}';
     }
-
-    public void setPersona(astronuta p) {
-        this.listaastro.add(p);
-    }
-
-    public void cargarArchivo() {
+   public void cargarArchivo() {
         try {
-            listaastro = new ArrayList();
-            astronuta temp;
+            listadest = new ArrayList();
+            destino temp;
             if (arch.exists()) {
                 FileInputStream entrada
                         = new FileInputStream(arch);
                 ObjectInputStream objeto
                         = new ObjectInputStream(entrada);
                 try {
-                    while ((temp = (astronuta) objeto.readObject()) != null) {
-                        listaastro.add(temp);
+                    while ((temp = (destino) objeto.readObject()) != null) {
+                        listadest.add(temp);
                     }
                 } catch (EOFException e) {
                     //encontro el final del archivo
@@ -65,14 +53,13 @@ public class adminastro {
             ex.printStackTrace();
         }
     }
-
-    public void escribirArchivo() {
+       public void escribirArchivo() {
         FileOutputStream fw = null;
         ObjectOutputStream bw = null;
         try {
             fw = new FileOutputStream(arch);
             bw = new ObjectOutputStream(fw);
-            for (astronuta t : listaastro) {
+            for (destino t : listadest) {
                 bw.writeObject(t);
             }
             bw.flush();
@@ -85,5 +72,6 @@ public class adminastro {
             }
         }
     }
-
+ 
 }
+ 

@@ -7,53 +7,47 @@ package lab7_karimguifarro;
 
 import java.io.*;
 import java.util.ArrayList;
-
-public class adminastro {
-
-    private ArrayList<astronuta> listaastro = new ArrayList();
+public class adminave {
+    private ArrayList<nave> listanave = new ArrayList();
     private File arch = null;
 
-    public adminastro(String path) {
-        arch = new File(path);
+    public adminave(String path) {
+        arch= new File(path);
     }
 
-    public ArrayList<astronuta> getListaPersonas() {
-        return listaastro;
+    public ArrayList<nave> getListanave() {
+        return listanave;
     }
 
-    public void setListaastronauta(ArrayList<astronuta> listaPersonas) {
-        this.listaastro = listaPersonas;
+    public void setListanave(ArrayList<nave> listanave) {
+        this.listanave = listanave;
     }
 
-    public File getArchivo() {
+    public File getArch() {
         return arch;
     }
 
-    public void setArchivo(File arch) {
+    public void setArch(File arch) {
         this.arch = arch;
     }
 
     @Override
     public String toString() {
-        return "adminastro{" + "listaastro=" + listaastro + ", arch=" + arch + '}';
+        return "adminave{" + "listanave=" + listanave + ", arch=" + arch + '}';
     }
-
-    public void setPersona(astronuta p) {
-        this.listaastro.add(p);
-    }
-
-    public void cargarArchivo() {
+    
+     public void cargarArchivo() {
         try {
-            listaastro = new ArrayList();
-            astronuta temp;
+            listanave = new ArrayList();
+            nave temp;
             if (arch.exists()) {
                 FileInputStream entrada
                         = new FileInputStream(arch);
                 ObjectInputStream objeto
                         = new ObjectInputStream(entrada);
                 try {
-                    while ((temp = (astronuta) objeto.readObject()) != null) {
-                        listaastro.add(temp);
+                    while ((temp = (nave) objeto.readObject()) != null) {
+                        listanave.add(temp);
                     }
                 } catch (EOFException e) {
                     //encontro el final del archivo
@@ -65,14 +59,13 @@ public class adminastro {
             ex.printStackTrace();
         }
     }
-
-    public void escribirArchivo() {
+       public void escribirArchivo() {
         FileOutputStream fw = null;
         ObjectOutputStream bw = null;
         try {
             fw = new FileOutputStream(arch);
             bw = new ObjectOutputStream(fw);
-            for (astronuta t : listaastro) {
+            for (nave t : listanave) {
                 bw.writeObject(t);
             }
             bw.flush();
