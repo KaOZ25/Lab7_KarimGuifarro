@@ -35,15 +35,11 @@ public class adminastro {
       public void setAstronuta(astronuta a){
         listaastro.add(a);
     }
+    
     @Override
     public String toString() {
         return "adminastro{" + "listaastro=" + listaastro + ", arch=" + arch + '}';
     }
-
-    public void setPersona(astronuta p) {
-        this.listaastro.add(p);
-    }
-
     public void cargarArchivo() {
         try {
             listaastro = new ArrayList();
@@ -87,5 +83,4 @@ public class adminastro {
             }
         }
     }
-
 }
