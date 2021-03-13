@@ -32,7 +32,9 @@ public class adminastro {
     public void setArchivo(File arch) {
         this.arch = arch;
     }
-
+      public void setAstronuta(astronuta a){
+        listaastro.add(a);
+    }
     @Override
     public String toString() {
         return "adminastro{" + "listaastro=" + listaastro + ", arch=" + arch + '}';

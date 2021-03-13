@@ -30,6 +30,9 @@ public class adminave {
     public void setArch(File arch) {
         this.arch = arch;
     }
+    public void setNave(nave a){
+        listanave.add(a);
+    }
 
     @Override
     public String toString() {

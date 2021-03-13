@@ -7,10 +7,11 @@ package lab7_karimguifarro;
 
 import java.io.Serializable;
 
+public class nave implements Serializable {
 
-public class nave implements Serializable{
-    private String nombre,ID,tripulacion;
-    private int max_personas,tiempo_despegue,tiempo_aterrizaje,velcidad,distanciamax,combustible,reserva;
+    private String nombre, ID, tripulacion;
+    private int max_personas, tiempo_despegue, tiempo_aterrizaje, velcidad, distanciamax, combustible, reserva;
+    private static final long SerialVersionUID = 555L;
 
     public nave() {
     }
@@ -110,7 +111,7 @@ public class nave implements Serializable{
 
     @Override
     public String toString() {
-        return "nave{" + "nombre=" + nombre + ", ID=" + ID + ", tripulacion=" + tripulacion + ", max_personas=" + max_personas + ", tiempo_despegue=" + tiempo_despegue + ", tiempo_aterrizaje=" + tiempo_aterrizaje + ", velcidad=" + velcidad + ", distanciamax=" + distanciamax + ", combustible=" + combustible + ", reserva=" + reserva + '}';
+        return nombre;
     }
-    
+
 }

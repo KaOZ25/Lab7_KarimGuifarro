@@ -1,12 +1,15 @@
-
 package lab7_karimguifarro;
 
 import java.io.Serializable;
 
+public class astronuta implements Serializable {
 
-public class astronuta implements Serializable{
-    private String nombre,ID,apellido,nacionalidad,titulo_universitario,contex_fisica;
-    private int peso,misiones;
+    private String nombre, ID, apellido, nacionalidad, titulo_universitario, contex_fisica;
+    private int peso, misiones;
+    private static final long SerialVersionUID = 555L;
+
+    public astronuta() {
+    }
 
     public astronuta(String nombre, String ID, String apellido, String nacionalidad, String titulo_universitario, String contex_fisica, int peso, int misiones) {
         this.nombre = nombre;
@@ -85,7 +88,7 @@ public class astronuta implements Serializable{
 
     @Override
     public String toString() {
-        return "astronuta{" + "nombre=" + nombre + '}';
+        return nombre;
     }
-    
+
 }

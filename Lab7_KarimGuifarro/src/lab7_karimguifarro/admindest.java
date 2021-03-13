@@ -25,6 +25,10 @@ public class admindest {
     public void setArch(File arch) {
         this.arch = arch;
     }
+       public void setDestino(destino a){
+        listadest.add(a);
+    }
+
 
     @Override
     public String toString() {

@@ -7,9 +7,11 @@ package lab7_karimguifarro;
 
 import java.io.Serializable;
 
-public class destino implements Serializable{
-    private String tipo,nombre,superficie;
-    private int distancia,saturacion_oxigeno;
+public class destino implements Serializable {
+
+    private String tipo, nombre, superficie;
+    private int distancia, saturacion_oxigeno;
+    private static final long SerialVersionUID = 555L;
 
     public destino() {
     }
@@ -64,7 +66,7 @@ public class destino implements Serializable{
 
     @Override
     public String toString() {
-        return "destino{" + "tipo=" + tipo + ", nombre=" + nombre + ", superficie=" + superficie + ", distancia=" + distancia + ", saturacion_oxigeno=" + saturacion_oxigeno + '}';
+        return nombre;
     }
-    
+
 }
